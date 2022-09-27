@@ -2,12 +2,13 @@
   "ver": "1.1.39",
   "importer": "prefab",
   "imported": true,
-  "uuid": "0fdbbccd-f614-46e3-9251-68a1d61cc13c",
+  "uuid": "ec349b99-1607-4c88-a03f-6727e5727a67",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "carrot"
+    "syncNodeName": "carrot",
+    "persistent": true
   }
 }

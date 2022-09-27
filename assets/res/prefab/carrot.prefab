@@ -8,13 +8,13 @@
       "__id__": 1
     },
     "optimizationPolicy": 0,
-    "persistent": false,
+    "persistent": true,
     "asyncLoadAssets": false
   },
   {
     "__type__": "cc.Node",
     "_name": "carrot",
-    "_objFlags": 0,
+    "_objFlags": 512,
     "__editorExtras__": {},
     "_parent": null,
     "_children": [],
@@ -25,15 +25,18 @@
       },
       {
         "__id__": 4
+      },
+      {
+        "__id__": 6
       }
     ],
     "_prefab": {
-      "__id__": 6
+      "__id__": 8
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -148,
-      "y": 119.5,
+      "x": 0,
+      "y": 0,
       "z": 0
     },
     "_lrot": {
@@ -83,7 +86,7 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "73o5g/dQ5HL79YVqlTcA/i"
+    "fileId": "05acfYiLZMFr21bOxtAFNp"
   },
   {
     "__type__": "cc.Sprite",
@@ -127,7 +130,65 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "2aG/rm8mxOOLykF4msw8wD"
+    "fileId": "5a55YARsZJoJLsWfDES2E7"
+  },
+  {
+    "__type__": "cc.Button",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 7
+    },
+    "clickEvents": [],
+    "_interactable": true,
+    "_transition": 0,
+    "_normalColor": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_hoverColor": {
+      "__type__": "cc.Color",
+      "r": 211,
+      "g": 211,
+      "b": 211,
+      "a": 255
+    },
+    "_pressedColor": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_disabledColor": {
+      "__type__": "cc.Color",
+      "r": 124,
+      "g": 124,
+      "b": 124,
+      "a": 255
+    },
+    "_normalSprite": {
+      "__uuid__": "00b45883-16c0-4491-84b9-5851be9e5ddc@f9941",
+      "__expectedType__": "cc.SpriteFrame"
+    },
+    "_hoverSprite": null,
+    "_pressedSprite": null,
+    "_disabledSprite": null,
+    "_duration": 0.1,
+    "_zoomScale": 1.2,
+    "_target": null,
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "5a4pZUgydOfrz+kRWwQbTz"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -137,6 +198,6 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "08KqNaRg9DUprxwEFwf/Ac"
+    "fileId": "f0iYClhv1ITrZ2NolUQgE2"
   }
 ]
