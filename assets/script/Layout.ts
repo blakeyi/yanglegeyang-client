@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Sprite, Prefab, instantiate, Vec3, log, Button, Vec2 } from 'cc';
+import { _decorator, Component, Node, Sprite, Prefab, instantiate, Vec3, log, Button, Vec2, tween } from 'cc';
 const { ccclass, property } = _decorator;
 
 
@@ -157,31 +157,33 @@ export class Layout extends Component {
             // 计算当前摆放位置坐标
             //this.storeNode.addChild(curNode)
             let data:eventData = JSON.parse(customEventData)
-            this.calcPosInStore(data.itemIndex)
+            let endPos = this.calcPosInStore(data.itemIndex)
 
-            // 从node里删除
-            this.node.removeChild(curNode)
-            // 从itemList中删除
-            this.itemList = this.itemList.filter(item => item.id !== data.id)
-            // 刷新状态
-            this.setGrayNode(ITEM_WIDTH, ITEM_HEIGHT)
+            // 移动到目标位置
+            let t = tween(curNode)
+            t.to(0.5, {position:endPos}).call(()=> {
+                // 重新生成一个
+                let tempNode:Node = instantiate(this.items[data.itemIndex])
+                this.storeNode.addChild(tempNode)
+                // 从itemList中删除
+                this.itemList = this.itemList.filter(item => item.id !== data.id)
+                // 刷新状态
+                this.setGrayNode(ITEM_WIDTH, ITEM_HEIGHT)
+                // 从node里删除
+                this.node.removeChild(curNode)
+            }).start()
         }
     }
 
     calcPosInStore(itemIndex) {
         log(itemIndex)
         let children = this.storeNode.children
-        let startPos = this.storeNode.getPosition()
         let worldPos = this.storeNode.getWorldPosition()
-        let tempNode:Node = instantiate(this.items[itemIndex])
-        tempNode.setPosition(new Vec3(-180 + children.length * (60), 0, 0)) // 相对父节点的位置
         if (children.length >= 7) {
             log("游戏结束后")
             return
         }
-        this.storeNode.addChild(tempNode)
-        log(startPos)
-        log(worldPos)
+        return new Vec3(-180 + children.length * (60), -1 * (worldPos.y + ITEM_HEIGHT - 2), 0)
     }
 }
 
